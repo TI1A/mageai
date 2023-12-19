@@ -50,6 +50,7 @@ class OauthResource(GenericResource):
                 model = dict(provider=provider)
                 authenticated = len(access_tokens) >= 1
                 if authenticated:
+                    print('access token:', access_tokens[0].token)
                     model['authenticated'] = authenticated
                     model['expires'] = max(
                         [access_token.expires for access_token in access_tokens]
