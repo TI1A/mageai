@@ -21,6 +21,7 @@ from mage_ai.settings.sso import (
 
 class ADProvider(SsoProvider, OauthProvider):
     provider = OAUTH_PROVIDER_ACTIVE_DIRECTORY
+    scope = 'User.Read'
 
     def __init__(self):
         self.__validate()
@@ -55,7 +56,7 @@ class ADProvider(SsoProvider, OauthProvider):
                     f'{base_url}/oauth',
                 ),
                 response_type='code',
-                scope='User.Read',
+                scope=self.scope,
                 state=uuid.uuid4().hex,
             )
             query_strings = []

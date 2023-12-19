@@ -4,6 +4,7 @@ import OktaSignIn from '@components/Sessions/OktaSignIn';
 
 export enum OauthProviderEnum {
   ACTIVE_DIRECTORY = 'active_directory',
+  AZURE_DEVOPS = 'azure_devops',
   BITBUCKET = 'bitbucket',
   GITHUB = 'github',
   GOOGLE = 'google',
